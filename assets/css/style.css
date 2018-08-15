@@ -1,0 +1,11 @@
+.gameHeader {
+    height: 150px;
+    background-image: url("../images/vintage-concrete.png");
+}
+
+body {
+    background-image: url("../images/vintage-concrete.png");
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Over the Rainbow', cursive;
+    font-weight: bold;
+}
