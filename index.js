@@ -1,6 +1,5 @@
 let score = 0
 let currentWord = ""
-let inGuesses = 0
 let guessLeft = 10
 let currentGuesses = []
 let wrongLetters = []
@@ -15,10 +14,11 @@ function hiddenWord() {
         }
 }
 
-const allWords = []
+const allWords = ['sunnies','dad hat', 'messy bun', 'portrait mode', 'insta','jack johnson']
 
 function ranWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)]
+    console.log(arr)
 }
 
 function restartRound() {

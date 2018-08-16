@@ -15,6 +15,15 @@ body {
     display: flex;
 }
 
+.instructions {
+    font-size: 24px;
+    font-weight: bolder;
+    justify-content: center;
+    border: dotted 3px teal;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+}
+
 #main-container {
     padding-top: 50px;
     min-height: calc(100vh - 70px);
