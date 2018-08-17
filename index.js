@@ -48,14 +48,14 @@ document.addEventListener("keypress", function (e) {
     currentGuesses.push(letter)
 
     if (guessLeft <= 0) {
-        document.querySelector('#message').innerHTML = `Beach please! ${currentWord.join('')} was correct!`
+        document.querySelector('#message').innerHTML = `Beach please! ${currentWord} was correct!`
         restartRound();
         return
     }
 
     if (hiddenWord() === currentWord) {
-        document.querySelector('#message').innerHTML= `You Smart Beach! ${currentWord.join('')} is correct!`
         score++
+        document.querySelector('#message').innerHTML= `You Smart Beach! ${currentWord} is correct!`
         restartRound()
         return
     }
