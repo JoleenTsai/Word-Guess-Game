@@ -30,6 +30,7 @@ function restartRound() {
     wrongLetters = []
     currentGuesses = []
 
+
 }
 
 const scoreT = document.querySelector("#score")
@@ -59,7 +60,10 @@ document.addEventListener("keypress", function (e) {
         restartRound()
         return
     }
-
+    
+    if (guessLeft === 9) {
+        document.querySelector('#message').innerHTML=''
+    }
     if ((currentWord.indexOf(letter) === -1) && wrongLetters.indexOf(letter) === -1) {
         guessLeft--;
         wrongLetters.push(letter);
