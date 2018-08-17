@@ -61,3 +61,10 @@ body {
     padding: 10px;
     text-align: center;
 }
+
+#hiddenWord {
+    font-family: 'Courier New', Courier, monospace;
+}
+#wrongLetters {
+    font-family: 'Courier New', Courier, monospace;
+}

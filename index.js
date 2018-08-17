@@ -1,3 +1,5 @@
+
+
 let score = 0
 let currentWord = ""
 let guessLeft = 10
@@ -5,16 +7,17 @@ let currentGuesses = []
 let wrongLetters = []
 
 function hiddenWord() {
-    let tmpWord = []
-    for(let i = 0; i < currentWord.length; i++)
-        if(currentGuesses.indexOf(currentWord[i]) !== -1) {
-            tmpWord.push(currentWord[i])
+    const tmpWord = [];
+    for (let i = 0; i < currentWord.length; i++)
+        if (currentGuesses.indexOf(currentWord[i]) !== -1) {
+            tmpWord.push(currentWord[i]);
         } else {
             tmpWord.push("*")
         }
+return tmpWord.join('');
 }
 
-const allWords = ['sunnies','dad hat', 'messy bun', 'portrait mode', 'insta','jack johnson']
+const allWords = ['sunnies', 'dad hat', 'messy bun', 'portrait mode', 'insta', 'jack johnson']
 
 function ranWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)]
@@ -25,42 +28,42 @@ function restartRound() {
     currentWord = ranWord(allWords)
     guessLeft = 10
     wrongLetters = []
+    currentGuesses = []
+
 }
 
+const scoreT = document.querySelector("#score")
+const hword = document.querySelector("#hiddenWord")
+const gleft = document.querySelector("#guessLeft")
+const wrLet = document.querySelector("#wrongLetters")
 function displayValues() {
-    let scoreT = document.querySelector("#score")
-    let hword = document.querySelector("#hiddenWord")
-    let gleft = document.querySelector("#guessLeft")
-    let wrLet = document.querySelector("#wrongLetters")
-
-    scoreT.innerHTML = score
-    hword.innerHTML = hiddenWord()
-    gleft.innerHTML = guessLeft
-    wrLet.innerHTML = wrongLetters.join()
-
+    scoreT.innerHTML = score;
+    hword.innerHTML = hiddenWord();
+    gleft.innerHTML = guessLeft;
+    wrLet.innerHTML = wrongLetters.join();
 }
 
-document.addEventListener("keypress", function(event) {
-    const letter = event.key.toLowerCase()
+document.addEventListener("keypress", function (e) {
+    const letter = e.key.toLocaleLowerCase()
     currentGuesses.push(letter)
 
-    if(guessLeft <= 0) {
-        restartRound()
+    if (guessLeft <= 0) {
+        restartRound();
+        return
     }
 
-    if(hiddenWord() === currentWord) {
+    if (hiddenWord() === currentWord) {
         score++
         restartRound()
         return
     }
 
-    if(currentWord.indexOf(letter) !== -1) {
-        
-    } else {
-        guessLeft-- 
-        wrongLetters.push(letter)
+    if ((currentWord.indexOf(letter) === -1) && wrongLetters.indexOf(letter) === -1) {
+        guessLeft--;
+        wrongLetters.push(letter);
     }
     displayValues()
 })
 
 restartRound()
+displayValues()
