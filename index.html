@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Over+the+Rainbow" rel="stylesheet">
+    <title>Hangman</title>
+</head>
+
+<body>
+    <div id="main-container" class="container">
+        <section class="main-section">
+            <div class="row">
+                <div class="page-header gameHeader">
+                    <img src="assets/images/Header.png" alt="logo" style="width: 100%;height: 100%;">
+                </div>
+            </div>
+            <div class="row instructions">
+                <h2>#Basic Beach Essentials</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 photoArea">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-75 beachPic" src="assets/images/Ice Cream at Beach.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 beachPic" src="assets/images/4x3 ratio BEACH.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 beachPic" src="assets/images/Lifeguard.jpg" alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 beachPic" src="assets/images/Van at Beach.jpg" alt="Fourth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-75 beachPic" src="assets/images/Sunrise.jpg" alt="Fifth slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 gameArea">
+                    <div style="height: 80px;">Current Word:
+                        <span id="hiddenWord"></span>
+                    </div>
+                    <div style="height: 30px;">Wins:
+                        <span id="score"></span>
+                    </div>
+                    <div style="height: 30px;">Number of Guesses Left:
+                        <span id="guessLeft"></span>
+                    </div>
+                    <div style="height: 30px;">Letters Already Guessed:
+                        <span id="wrongLetters"></span>
+                    </div>
+                    <div><span id="message"></span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

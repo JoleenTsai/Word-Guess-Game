@@ -1,0 +1,70 @@
+
+.gameHeader {
+    height: 250px;
+    width: 100%;
+    background-image: url("../images/cork-wallet.png");
+    border: 3px dotted teal;
+    margin: 10px 0px 10px 0px;
+}
+
+body {
+    background-image: url("../images/cork-wallet.png");
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Over the Rainbow', cursive;
+    font-weight: bold;
+    display: flex;
+}
+
+.instructions {
+    font-size: 24px;
+    font-weight: bolder;
+    justify-content: center;
+    border: dotted 3px teal;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+}
+
+#main-container {
+    padding-top: 50px;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .main-section {
+    float: left;
+    width: 100%;
+    max-width: 960px;
+    padding: 30px;
+    margin: 0 0 40px 5px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+  }
+  
+.photoArea {
+    border: dotted 3px teal;
+    height: 500px;
+    padding: 10px;
+    text-align: center;
+}
+.beachPic{
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+}
+.gameArea {
+    border: dotted 3px teal;
+    height: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+#hiddenWord {
+    font-family: 'Courier New', Courier, monospace;
+}
+#wrongLetters {
+    font-family: 'Courier New', Courier, monospace;
+}
