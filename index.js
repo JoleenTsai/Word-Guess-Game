@@ -1,10 +1,6 @@
-
+//score, hiddenWord, guesses left, wrong letters, current guesses
 
 let score = 0
-let currentWord = ""
-let guessLeft = 10
-let currentGuesses = []
-let wrongLetters = []
 
 function hiddenWord() {
     const tmpWord = [];
@@ -15,6 +11,18 @@ function hiddenWord() {
             tmpWord.push("*")
         }
 return tmpWord.join('');
+}
+
+
+const scoreT = document.querySelector("#score")
+const hword = document.querySelector("#hiddenWord")
+const gleft = document.querySelector("#guessLeft")
+const wrLet = document.querySelector("#wrongLetters")
+function displayValues() {
+    scoreT.innerHTML = score;
+    hword.innerHTML = hiddenWord();
+    gleft.innerHTML = guessLeft;
+    wrLet.innerHTML = wrongLetters.join();
 }
 
 const allWords = ['sunnies', 'dad hat', 'messy bun', 'portrait mode', 'insta', 'jack johnson']
@@ -29,19 +37,6 @@ function restartRound() {
     guessLeft = 10
     wrongLetters = []
     currentGuesses = []
-
-
-}
-
-const scoreT = document.querySelector("#score")
-const hword = document.querySelector("#hiddenWord")
-const gleft = document.querySelector("#guessLeft")
-const wrLet = document.querySelector("#wrongLetters")
-function displayValues() {
-    scoreT.innerHTML = score;
-    hword.innerHTML = hiddenWord();
-    gleft.innerHTML = guessLeft;
-    wrLet.innerHTML = wrongLetters.join();
 }
 
 document.addEventListener("keypress", function (e) {
@@ -49,22 +44,22 @@ document.addEventListener("keypress", function (e) {
     currentGuesses.push(letter)
 
     if (guessLeft <= 0) {
-        document.querySelector('#message').innerHTML = `Beach please! ${currentWord} was correct!`
+        document.querySelector('#message').innerHTML = `Beach please! "${currentWord}" was correct!`
         restartRound();
         return
     }
 
     if (hiddenWord() === currentWord) {
         score++
-        document.querySelector('#message').innerHTML= `You Smart Beach! ${currentWord} is correct!`
+        document.querySelector('#message').innerHTML= `You Smart Beach! "${currentWord}" is correct!`
         restartRound()
         return
     }
     
-    if (guessLeft === 9) {
+    if (guessLeft <= 9 ) {
         document.querySelector('#message').innerHTML=''
     }
-    if ((currentWord.indexOf(letter) === -1) && wrongLetters.indexOf(letter) === -1) {
+    if (currentWord.indexOf(letter) === -1 && wrongLetters.indexOf(letter) === -1) {
         guessLeft--;
         wrongLetters.push(letter);
     }
